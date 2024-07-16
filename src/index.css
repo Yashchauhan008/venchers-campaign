@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   grid-gap: 1px;
@@ -31,7 +31,43 @@ code {
   width: 100%;
   height: 100%;
   object-fit: cover;
+} */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 3px;
+  padding: 20px;
 }
+
+.grid-item {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* This makes the item a square */
+}
+
+.grid-item img,
+.grid-item .placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the block area */
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.grid-item .placeholder {
+  background-color: #ccc;
+}
+
+.grid-item img:hover,
+.grid-item .placeholder:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
 .nav{
   display: flex;
   align-items: center;
