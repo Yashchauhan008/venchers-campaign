@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import {useKindeAuth} from "@kinde-oss/kinde-auth-react";
 import "../index.css"; // Assuming you will add the CSS in this file
+import { base } from "../baseUrls/base";
 
 const ImageUpload = ({ blockNumber, closePopup }) => {
   const [image, setImage] = useState(null);
@@ -40,7 +41,7 @@ const ImageUpload = ({ blockNumber, closePopup }) => {
     formData.append("user", user.email); // Change this to 'block_no'
 
     try {
-      await axios.post("http://localhost:5000/images/upload", formData, {
+      await axios.post(`${base}/images/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

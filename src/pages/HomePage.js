@@ -49,8 +49,9 @@ import axios from "axios";
 import "../index.css";
 import Navbar from "../components/navbar";
 import Loader from "../components/loader";
+import { base } from "../baseUrls/base";
 
-const HomePage = () => {
+const HomePage = () => {  
   const [images, setImages] = useState([]);
   const [clickedImage, setClickedImage] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -61,7 +62,7 @@ const HomePage = () => {
 
   const getImages = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/images"); // Update the port if necessary
+      const response = await axios.get(`${base}/images`); // Update the port if necessary
       const updatedImages = Array(160).fill(null);
       response.data.forEach((image) => {
         if (image.block_no >= 0 && image.block_no < 160) {

@@ -114,6 +114,7 @@ import axios from "axios";
 import ImageUpload from "../components/ImageUpload";
 import Navbar from "../components/navbar";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { base } from "../baseUrls/base";
 
 const Upload = () => {
   const { user } = useKindeAuth();
@@ -160,7 +161,7 @@ const Upload = () => {
 
   const getImages = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/images");
+      const response = await axios.get(`${base}/images`);
       const updatedImages = Array(160).fill(null);
       response.data.forEach((image) => {
         if (image.block_no >= 0 && image.block_no < 160) {
