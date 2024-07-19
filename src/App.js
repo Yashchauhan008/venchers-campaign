@@ -8,10 +8,10 @@ import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 function App() {
   return (
     <KindeProvider
-      clientId="eba193900e444714b12286af0e5a27d0"
-      domain="https://100blockcampaign.kinde.com"
-      redirectUri="http://localhost:3000"
-      logoutUri="http://localhost:3000"
+    clientId="eba193900e444714b12286af0e5a27d0"
+    domain="https://100blockcampaign.kinde.com"
+    redirectUri="http://localhost:3000"
+    logoutUri="http://localhost:3000"
     >
       <Router>
         <Routes>
