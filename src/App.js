@@ -10,8 +10,8 @@ function App() {
     <KindeProvider
     clientId="eba193900e444714b12286af0e5a27d0"
     domain="https://100blockcampaign.kinde.com"
-    redirectUri="http://localhost:3000"
-    logoutUri="http://localhost:3000"
+    redirectUri="https://venchers-campaign.vercel.app/"
+    logoutUri="https://venchers-campaign.vercel.app/"
     >
       <Router>
         <Routes>
